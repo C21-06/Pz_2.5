@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>container</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Додали велику висоту для можливості прокрутки */
+        }
+        /* Стилі для контейнера */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin: 20px auto;
+        }
+
+        /* Стилі для блоків */
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            text-align: center;
+            line-height: 100px;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* "box static" - статичне позиціонування (залиште за замовчуванням) */
+        .static {
+            background-color: #007bff;
+        }
+
+        /* "box relative" - відносне позиціонування зі зміною top */
+        .relative {
+            background-color: #28a745;
+            position: relative;
+            top: 20px; /* Зміна позиції за допомогою top */
+            left: 10px; /* Залишаємо left без змін */
+            z-index: 2;
+        }
+
+        /* "box absolute" - абсолютне позиціонування відносно контейнера "container" */
+        .absolute {
+            background-color: #dc3545;
+            position: absolute;
+            top: 50px; /* Змінено відстань від верхнього краю контейнера */
+            left: 20px;
+            z-index: 3;
+        }
+
+        /* "box fixed" - фіксоване позиціонування */
+        .fixed {
+            background-color: #ffc107;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box static">
+            <p>Статичне</p>
+        </div>
+        <div class="box relative">
+            <p>Відносне</p>
+        </div>
+        <div class="box absolute">
+            <p>Абсолютне</p>
+        </div>
+        <div class="box fixed">
+            <p>Фіксоване</p>
+        </div>
+    </div>
+</body>
+</html>
